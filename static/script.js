@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (theme == "Light") {
            themeState = "Light";
             changeSvg("#000000");
-            tanChiShe.src = "./svg/snake-Light.svg";
+            tanChiShe.src = "./static/svg/snake-Light.svg";
             var lightStyles = {
                 '--main-bg-color': '#ffffff',
                 '--main-text-color': '#000000',
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (theme == "Dark") {
              themeState = "Dark";
             changeSvg("#ffffff");
-            tanChiShe.src = "./svg/snake-Dark.svg";
+            tanChiShe.src = "./static/svg/snake-Dark.svg";
             const dackStyles = {
                 '--main-bg-color': 'rgb(0, 0, 0)',
                 '--main-text-color': '#ffffff',
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }else if (theme == "Blue") {
  themeState = "Blue";
             changeSvg("#000000");
-            tanChiShe.src = "./svg/snake-Light.svg";
+            tanChiShe.src = "./static/svg/snake-Light.svg";
             var blueStyles = {
                 '--main-bg-color': ' linear-gradient(45deg, #7fb2e5, white)',
                 '--main-text-color': '#000000',
