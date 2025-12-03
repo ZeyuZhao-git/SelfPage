@@ -248,14 +248,16 @@ body {
     opacity: 0;
     transition-delay: 0.5s;
     transform: translateY(50px);
-    /*淡入动画*/
-   display: flex;
+    /* 淡入动画 */
+    display: flex;
     background-color: var(--project-item-bg-color);
     border-radius: 8px;
     padding: 18px;
-    height: 110px;
+    min-height: 110px; /* 保持最小高度 */
+    height: auto; /* 允许根据内容扩展高度 */
     width: calc(50% - 30px);
     transition: all 0.5s ease;
+    align-items: stretch;
 }
 
 .projectItem.fade-in-visible {
@@ -263,20 +265,19 @@ body {
     transform: translateY(0);
 }
 
-
 .projectItem:hover {
     transform: translateY(-4px);
     background-color: var(--project-item-hover-color);
 }
 
-
-
 .projectItem:hover .projectItemLeft {
-    width: 100%;
+    flex: 1 1 100%;
 }
 
 .projectItem:hover .projectItemRight {
-    width: 0%;
+    flex: 0 0 0;
+    opacity: 0;
+    overflow: hidden;
 }
 
 .projectItem:hover .projectItemRight img {
@@ -291,6 +292,8 @@ body {
     font-size: 15px;
     margin-top: 8px;
     color: var(--project-item-left-text-color);
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .projectItemLeft h1 {
@@ -302,10 +305,11 @@ body {
 
 .projectItemLeft {
     transition: all 0.4s ease;
-    height: 100%;
-    width: 80%;
+    height: auto;
+    width: auto;
+    flex: 1 1 auto; /* 允许收缩与扩展 */
+    min-width: 0; /* 关键：允许在 flex 布局中收缩，避免溢出 */
 }
-
 
 .projectItemRight {
     overflow: hidden;
@@ -313,15 +317,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    height: 100%;
+    flex: 0 0 110px; /* 固定图片列宽，可按需调整 */
+    width: auto;
+    height: auto;
 }
 
 .projectItemRight img {
     transition: all 0.1s ease;
-    height: 44px;
     width: 44px;
-
+    height: auto;
+    max-width: 100%;
 }
 
 .skill {
